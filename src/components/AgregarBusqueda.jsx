@@ -16,7 +16,7 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
     const insertar = async () =>{
         try {
             const db = firebase.firestore()
-            const agregarPokeon = {
+            const addPokeon = {
                 nombre: pokemon.name,
                 url: pokemon.url,
                 id: pokemon.id,
@@ -28,7 +28,7 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
                     id: pokemon.id,
                 }
             ])
-            await db.collection('pokemon').add(agregarPokeon)
+            await db.collection('pokemon').add(addPokeon)
             setNombre('')
             setUrl('')
 
@@ -54,7 +54,7 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
     return(
         <>
             <center>
-            <div className="card"  style={{width: '18rem'}}>
+            <div class="card"  style={{width: '18rem'}}>
                 <img src="https://miro.medium.com/max/1400/1*lXH0CroMTAQKIfDzn-brPw.png" class="card-img-top" alt="..."/>
                 <div class="card-body">
                     <form onSubmit={buscar}>

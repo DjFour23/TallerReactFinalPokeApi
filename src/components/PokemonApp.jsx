@@ -5,7 +5,7 @@ import { AgregarBusqueda } from './AgregarBusqueda';
 const PokemonApp = () => {
   const [categoriasBusqueda, setCategoriasBusqueda] = useState(['']);
   return (
-    <div className="App">
+    <div className="App animate__fadeInTopRight">
         <AgregarBusqueda setCategoriasBusqueda={setCategoriasBusqueda}/>
         <ol>
         {
