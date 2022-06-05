@@ -54,7 +54,7 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
     return(
         <>
             <center>
-            <div class="card" style={{width: '18rem'}}>
+            <div className="card"  style={{width: '18rem'}}>
                 <img src="https://miro.medium.com/max/1400/1*lXH0CroMTAQKIfDzn-brPw.png" class="card-img-top" alt="..."/>
                 <div class="card-body">
                     <form onSubmit={buscar}>
