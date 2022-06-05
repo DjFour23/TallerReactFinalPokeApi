@@ -13,17 +13,14 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
 
     pokemon = getPokemon(valorBusqueda)
     
-    
     const insertar = async () =>{
-        
         try {
             const db = firebase.firestore()
-            const addPokeon = {
+            const agregarPokeon = {
                 nombre: pokemon.name,
                 url: pokemon.url,
                 id: pokemon.id,
             }
-            
             setDataPokemon([...dataPokemon,
                 {
                     nombre: pokemon.name,
@@ -31,9 +28,7 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
                     id: pokemon.id,
                 }
             ])
-            
-            await db.collection('pokemon').add(addPokeon)
-
+            await db.collection('pokemon').add(agregarPokeon)
             setNombre('')
             setUrl('')
 
@@ -58,15 +53,23 @@ export const AgregarBusqueda =({setCategoriasBusqueda})=>{
 
     return(
         <>
-            <form onSubmit={buscar}>
-                <p>Buscar Personaje</p>
-                <input 
-                    type="text" 
-                    placeholder="ID del personaje" 
-                    value = {valorBusqueda}
-                    onChange={cambiarValorBusqueda}
-                />
-            </form>
+            <center>
+            <div class="card" style={{width: '18rem'}}>
+                <img src="https://miro.medium.com/max/1400/1*lXH0CroMTAQKIfDzn-brPw.png" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <form onSubmit={buscar}>
+                        <p>Descubra su pokémon :D</p>
+                        <input 
+                            type="text" 
+                            placeholder="Ingrese ID del Pokemon" 
+                            value = {valorBusqueda}
+                            onChange={cambiarValorBusqueda}
+                            required
+                        />
+                    </form>
+                </div>
+            </div>
+            </center>
         </>
     );
 }
